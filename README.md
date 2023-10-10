@@ -25,7 +25,7 @@ This project contains the code and artifacts related to analyzing data from a su
 
 <a name="web-application"></a>
 ## Web Application
-The dashboard can be accessed from [here]().
+The dashboard can be accessed from [here](https://app-dashborad-traeexgt7av8pdbfvaxrnh.streamlit.app).
 
 <a name="medium-article"></a>
 ## Medium Article
