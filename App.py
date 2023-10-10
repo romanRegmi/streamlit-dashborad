@@ -18,7 +18,7 @@ def get_image(path:str) -> Image:
     image = Image.open(path)
     return image
 
-sales_data = get_data("db/Superstore Orders.csv")
+sales_data = get_data("db/csv/Superstore Orders.csv")
 image = get_image("db/img/supermarket.jpg")
 
 st.sidebar.image(image, use_column_width=True)
