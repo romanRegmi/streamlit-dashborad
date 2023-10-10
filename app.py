@@ -19,7 +19,7 @@ def get_image(path:str) -> Image:
     return image
 
 sales_data = get_data("db/Superstore Orders.csv")
-image = get_image("db/supermarket.jpeg")
+image = get_image("db/img/supermarket.jpg")
 
 st.sidebar.image(image, use_column_width=True)
 st.sidebar.header("Filter Your Data")
@@ -136,17 +136,20 @@ right_column.metric(label="Total Profit",
 
 st.markdown("""---""")
 
+# BAR CHART
+_, middle_column, _ = st.columns([1, 2, 1])
 
-fig = go.Figure(go.Bar(
-            x=[total_sales, profit_earned, sales_forecast],
-            y=['Total Sales', 'Profit', 'Sales Forecast'],
-            marker=dict(
-            color='rgba(246, 78, 139, 0.6)',
-            line=dict(color='rgba(246, 78, 139, 1.0)', width=3)
-    ),
-            orientation='h'))
-fig.update_layout(title_text='Profit and Sales Distribution')
-st.plotly_chart(fig)
+with middle_column:
+    fig = go.Figure(go.Bar(
+                x=[total_sales, profit_earned, sales_forecast],
+                y=['Total Sales', 'Profit', 'Sales Forecast'],
+                marker=dict(
+                color='rgba(246, 78, 139, 0.6)',
+                line=dict(color='rgba(246, 78, 139, 1.0)', width=3)
+        ),
+                orientation='h'))
+    fig.update_layout(title_text='Profit and Sales Distribution')
+    st.plotly_chart(fig)
 
 sales_segment_profit = sales_data.groupby('Segment')['Profit'].sum().reset_index().sort_values(['Profit'], 
                                                                                   ascending=False)
