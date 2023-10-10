@@ -5,27 +5,32 @@ This project contains the code and artifacts related to analyzing data from a su
 ## Table of Contents
 
 - [Project Structure](#project-structure)
-- [Usage](#usage)
 - [Web Application](#web-application)
 - [Medium Article](#medium-article)
-- [Contributing](#contributing)
 - [License](#license)
 
 <a name="project-structure"></a>
 ## Project Structure
 
 ```
-- /data_analysis
-  - data_analysis_script.py
-  - data/
-    - super_store_data.csv
-- /web_application
-  - ...
+- /db
+  - csv/
+    - Superstore Orders.csv
+  - img/
+    - supermarket.jpg
+- App.py
 - README.md
-
-
+- requirements.txt
 ```
 
-## [Streamlit-Dashboard](https://share.streamlit.io/romanregmi/streamlit-dashborad/main/app.py)
+<a name="web-application"></a>
+## Web Application
+The dashboard can be accessed from [here]().
 
-## [Medium](https://medium.com/@developerRegmi/build-a-streamlit-app-223c2050be76)
+<a name="medium-article"></a>
+## Medium Article
+A comprehensive Medium article has been written to explain the analysis, insights, and visualizations obtained from the super store data. The article can be accessed [here](https://medium.com/@developerRegmi/build-a-streamlit-app-223c2050be76).
+
+<a name="license"></a>
+## License
+This project is licensed under the MIT License.
