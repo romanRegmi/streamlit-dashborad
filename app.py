@@ -7,19 +7,19 @@ from PIL import Image
 st.set_page_config(page_title="Sales Dashboard", page_icon=":bar_chart:", layout="wide")
 
 @st.cache
-def get_data(path:str)->pd.DataFrame:
+def get_data(path:str) -> pd.DataFrame:
     data_frame = pd.read_csv(
         path,
     )
     return data_frame
 
 @st.cache
-def get_image(path:str)->Image:
+def get_image(path:str) -> Image:
     image = Image.open(path)
     return image
 
-sales_data = get_data("dataSet/Superstore_Orders.csv")
-image = get_image("dataSet/supermarket.jpeg")
+sales_data = get_data("db/Superstore Orders.csv")
+image = get_image("db/supermarket.jpeg")
 
 st.sidebar.image(image, use_column_width=True)
 st.sidebar.header("Filter Your Data")
@@ -150,7 +150,7 @@ st.plotly_chart(fig)
 
 sales_segment_profit = sales_data.groupby('Segment')['Profit'].sum().reset_index().sort_values(['Profit'], 
                                                                                   ascending=False)
-# pie charts
+# PIE CHARTS
 labels = sales_segment_profit['Segment']
 value  = sales_segment_profit['Profit']
 profit_pie = go.Figure(data=[go.Pie(labels=labels, values=value, 
